@@ -17,6 +17,8 @@ $ npm run start
 
 # generate static project
 $ npm run generate
+# babel
+$ npm i babel-core babel-preset-es2015 babel-cli
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
