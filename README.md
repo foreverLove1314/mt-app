@@ -6,9 +6,11 @@
 
 ``` bash
 # install dependencies
-$ npm run install
+$ npm install
+$ cnpm install
 
 # serve with hot reload at localhost:3000
+  运行前，需要启动MongoDB和Redis
 $ npm run dev
 
 # build for production and launch server
@@ -19,6 +21,7 @@ $ npm run start
 $ npm run generate
 # babel
 $ npm i babel-core babel-preset-es2015 babel-cli
+
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
