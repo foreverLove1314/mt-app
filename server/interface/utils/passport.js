@@ -22,7 +22,7 @@ passport.serializeUser((user,done)=>{
   done(null,user)
 })
 
-passport.deserialzeUser((user,done)=>{
+passport.deserializeUser((user,done)=>{
   return done(null,user)
 })
 
