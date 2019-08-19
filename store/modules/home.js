@@ -10,14 +10,10 @@ const mutations = {
 }
 
 const actions = {
-  setMenu: ({
-              commit
-            }, menu) => {
+  setMenu: ({commit}, menu) => {
     commit('setMenu', menu)
   },
-  setHotPlace: ({
-                  commit
-                }, hotPlace) => {
+  setHotPlace: ({commit}, hotPlace) => {
     commit('setHotPlace', hotPlace)
   }
 }
