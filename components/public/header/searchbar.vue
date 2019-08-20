@@ -13,7 +13,9 @@
             <dd v-for="(item,index) in hotPlace" :key="index">{{item}}</dd>
           </dl>
           <dl class="searchList" v-if="isSearchList">
-            <dd v-for="(item,index) in searchList" :key="index">{{item}}</dd>
+            <dd v-for="(item,index) in searchList" :key="index">
+              <a href="#">{{item.name}}</a>
+            </dd>
           </dl>
         </div>
         <p class="suggest">
@@ -53,6 +55,7 @@
 </template>
 
 <script>
+import _ from 'lodash'
 export default {
 	name: "searchbar",
   data(){
@@ -60,7 +63,7 @@ export default {
       search:'',
 	    isFocus:false,
       hotPlace:['火锅','汤锅','干锅'],
-      searchList:['故宫','紫禁城','天安门']
+      searchList:[]
     }
   },
   computed:{
@@ -71,18 +74,27 @@ export default {
 	    return this.isFocus&&this.search;
     }
   },
-  methods:{
-	  focus(){
-	    this.isFocus=true;
+  methods: {
+    focus() {
+      this.isFocus = true;
     },
-    blur(){
-	    setTimeout(() =>{
-        this.isFocus=false;
-      },200);
+    blur() {
+      setTimeout(() => {
+        this.isFocus = false;
+      }, 200);
     },
-    input(){
-      console.log('input');
-    }
+    input: _.debounce(async function () {
+      let self = this;
+      let city = self.$store.state.geo.position.city.replace('市', '')
+      self.searchList = []
+      let {status, data: {top}} = await self.$axios.get('/search/top', {
+        params: {
+          input: self.search,
+          city
+        }
+      })
+      self.searchList = top.slice(0, 10)
+    }, 300)
   }
 }
 </script>
