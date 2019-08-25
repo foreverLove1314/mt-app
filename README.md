@@ -22,7 +22,7 @@ $ npm run generate
 # babel
 $ npm i babel-core babel-preset-es2015 babel-cli
 # 依赖
-$ mongoose koa-redis koa-router koa-json nodemailer crypto-js
+$ mongoose koa-redis koa-router koa-json nodemailer crypto-js js-pinyin
 
 ```
 
