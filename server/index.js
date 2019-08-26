@@ -23,6 +23,7 @@ app.use(bodyParser({
 }))
 app.use(json())
 
+mongoose.set('useCreateIndex', true)
 mongoose.connect(dbConfig.dbs,{
   useNewUrlParser:true
 })
