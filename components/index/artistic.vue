@@ -31,7 +31,7 @@
 		<ul class="ibody">
 			<li
 					v-for="item in cur"
-					:key="item.title">
+					:key="item.id">
 				<el-card
 						:body-style="{ padding: '0px' }"
 						shadow="never">
@@ -107,6 +107,7 @@ export default {
                 if (status === 200 && count > 0) {
                     let r = pois.filter(item => item.photos.length).map(item => {
                         return {
+                            id: item.id,
                             title: item.name,
                             pos: item.type.split(';')[0],
                             price: item.biz_ext.cost || '暂无',
