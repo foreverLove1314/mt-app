@@ -68,7 +68,7 @@ export default {
           this.list.sort((a,b)=>(b.comment-a.comment));
           break;
         case "s-comment"://评价最高
-          this.list.sort((a,b)=>(b.rate-a.rate));;
+          this.list.sort((a,b)=>(b.rate-a.rate));
           break;
         default:
           break;
