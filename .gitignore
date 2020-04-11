@@ -80,6 +80,7 @@ dist
 # IDE / Editor
 .idea
 .editorconfig
+.history
 
 # Service worker
 sw.*
