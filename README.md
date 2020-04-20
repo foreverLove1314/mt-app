@@ -23,7 +23,8 @@ $ npm run generate
 $ npm i babel-core babel-preset-env babel-cli
 # 依赖
 $ mongoose koa-redis koa-router koa-json nodemailer crypto-js js-pinyin
-
-```
+```  
+# 环境参数
+![avatar](/assets/EnvironmentalDescription.png)  
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
